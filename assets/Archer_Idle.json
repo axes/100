@@ -1,0 +1,27 @@
+{
+    "frames": [
+        {"filename": "idle_down_1", "frame": {"x":0,"y":0,"w":19,"h":31}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":19,"h":31}, "sourceSize":{"w":19,"h":31}},
+        {"filename": "idle_up_3", "frame": {"x":20,"y":0,"w":19,"h":31}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":19,"h":31}, "sourceSize":{"w":19,"h":31}},
+        {"filename": "idle_up_1", "frame": {"x":40,"y":0,"w":19,"h":30}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":19,"h":30}, "sourceSize":{"w":19,"h":30}},
+        {"filename": "idle_down_2", "frame": {"x":60,"y":0,"w":19,"h":30}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":19,"h":30}, "sourceSize":{"w":19,"h":30}},
+        {"filename": "idle_down_3", "frame": {"x":80,"y":0,"w":19,"h":31}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":19,"h":31}, "sourceSize":{"w":19,"h":31}},
+        {"filename": "idle_up_4", "frame": {"x":60,"y":31,"w":19,"h":30}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":19,"h":30}, "sourceSize":{"w":19,"h":30}},
+        {"filename": "idle_right_1", "frame": {"x":0,"y":32,"w":25,"h":29}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":25,"h":29}, "sourceSize":{"w":25,"h":29}},
+        {"filename": "idle_right_4", "frame": {"x":26,"y":32,"w":25,"h":29}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":25,"h":29}, "sourceSize":{"w":25,"h":29}},
+        {"filename": "idle_up_2", "frame": {"x":80,"y":32,"w":19,"h":31}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":19,"h":31}, "sourceSize":{"w":19,"h":31}},
+        {"filename": "idle_right_3", "frame": {"x":0,"y":62,"w":25,"h":30}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":25,"h":30}, "sourceSize":{"w":25,"h":30}},
+        {"filename": "idle_left_4", "frame": {"x":26,"y":62,"w":25,"h":29}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":25,"h":29}, "sourceSize":{"w":25,"h":29}},
+        {"filename": "idle_left_1", "frame": {"x":52,"y":62,"w":25,"h":29}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":25,"h":29}, "sourceSize":{"w":25,"h":29}},
+        {"filename": "idle_left_2", "frame": {"x":0,"y":93,"w":25,"h":30}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":25,"h":30}, "sourceSize":{"w":25,"h":30}},
+        {"filename": "idle_right_2", "frame": {"x":26,"y":93,"w":25,"h":30}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":25,"h":30}, "sourceSize":{"w":25,"h":30}},
+        {"filename": "idle_left_3", "frame": {"x":52,"y":93,"w":25,"h":30}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":25,"h":30}, "sourceSize":{"w":25,"h":30}},
+        {"filename": "idle_down_4", "frame": {"x":78,"y":93,"w":19,"h":30}, "rotated":false, "trimmed":false, "spriteSourceSize":{"x":0,"y":0,"w":19,"h":30}, "sourceSize":{"w":19,"h":30}}
+    ],
+    "meta": {
+        "app": "https://www.leshylabs.com/apps/sstool/",
+        "version": "Leshy SpriteSheet Tool v0.8.4",
+        "image": "Archer_Idle.png",
+        "size": {"w":99,"h":123},
+        "scale": 1
+    }
+}
