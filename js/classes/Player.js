@@ -102,8 +102,10 @@ class Player {
                 console.log('Attack right');
             }
 
-            // Crear una nueva flecha
-            new Arrow(this.scene, this.sprite.x, this.sprite.y, this.lastDirection);
+            // Crear una nueva flecha después de 500ms
+            this.scene.time.delayedCall(200, () => {
+                new Arrow(this.scene, this.sprite.x, this.sprite.y, this.lastDirection);
+            });
         }
     }
 }
