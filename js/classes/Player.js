@@ -4,12 +4,15 @@ class Player {
     constructor(scene, x, y) {
         this.scene = scene;
         this.sprite = scene.physics.add.sprite(x, y, 'archer_idle');
+        this.sprite.setOrigin(0.5, 0.5); // Centrar el origen del sprite
         this.sprite.play('idle_down');
         this.lastDirection = 'down';
         this.isAttacking = false; // Estado para verificar si el personaje está atacando
 
         this.attackSpeed = 500; // Velocidad de ataque en milisegundos
         this.lastAttackTime = 0; // Última vez que se realizó un ataque
+
+        this.movementSpeed = 300; // Aumentar la velocidad de movimiento al triple
 
         this.cursors = scene.input.keyboard.createCursorKeys();
         this.wasd = {
@@ -22,12 +25,28 @@ class Player {
 
         // Evento para restablecer isAttacking cuando la animación de ataque termina
         this.sprite.on('animationcomplete', this.animationComplete, this);
+
+        // Evento para ajustar la caja de colisión cuando comienza la animación de ataque
+        this.sprite.on('animationstart', this.animationStart, this);
+
+        // Configurar el sprite del personaje para que sea inamovible por colisiones
+        this.sprite.body.immovable = true;
+    }
+
+    animationStart(animation, frame) {
+        if (animation.key.startsWith('attack_')) {
+            // Ajustar el tamaño y la posición de la caja de colisión durante la animación de ataque
+            this.sprite.body.setOffset(50, 50); // Ajustar el desplazamiento de la caja de colisión
+        }
     }
 
     animationComplete(animation, frame) {
         if (animation.key.startsWith('attack_')) {
             this.isAttacking = false;
             this.sprite.play(`idle_${this.lastDirection}`, true);
+
+            // Restaurar la caja de colisión a su tamaño y posición original
+            this.sprite.body.setOffset(0, 0); // Desplazamiento original de la caja de colisión
         }
     }
 
@@ -46,25 +65,25 @@ class Player {
         let moving = false;
 
         if (this.wasd.up.isDown) {
-            this.sprite.setVelocityY(-100);
+            this.sprite.setVelocityY(-this.movementSpeed);
             this.sprite.setVelocityX(0);
             this.sprite.play('move_up', true);
             this.lastDirection = 'up';
             moving = true;
         } else if (this.wasd.down.isDown) {
-            this.sprite.setVelocityY(100);
+            this.sprite.setVelocityY(this.movementSpeed);
             this.sprite.setVelocityX(0);
             this.sprite.play('move_down', true);
             this.lastDirection = 'down';
             moving = true;
         } else if (this.wasd.left.isDown) {
-            this.sprite.setVelocityX(-100);
+            this.sprite.setVelocityX(-this.movementSpeed);
             this.sprite.setVelocityY(0);
             this.sprite.play('move_left', true);
             this.lastDirection = 'left';
             moving = true;
         } else if (this.wasd.right.isDown) {
-            this.sprite.setVelocityX(100);
+            this.sprite.setVelocityX(this.movementSpeed);
             this.sprite.setVelocityY(0);
             this.sprite.play('move_right', true);
             this.lastDirection = 'right';
@@ -90,16 +109,12 @@ class Player {
 
             if (this.lastDirection === 'down') {
                 this.sprite.play('attack_down');
-                console.log('Attack down');
             } else if (this.lastDirection === 'up') {
                 this.sprite.play('attack_up');
-                console.log('Attack up');
             } else if (this.lastDirection === 'left') {
                 this.sprite.play('attack_left');
-                console.log('Attack left');
             } else if (this.lastDirection === 'right') {
                 this.sprite.play('attack_right');
-                console.log('Attack right');
             }
 
             // Crear una nueva flecha después de 500ms

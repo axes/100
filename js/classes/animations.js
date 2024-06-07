@@ -66,6 +66,7 @@ const createAnimations = (scene) => {
         frames: scene.anims.generateFrameNames('archer_attack', { prefix: 'attack_up_', start: 1, end: 6 }),
         frameRate: 10,
         repeat: 0
+
     });
     scene.anims.create({
         key: 'attack_left',
@@ -77,7 +78,8 @@ const createAnimations = (scene) => {
         key: 'attack_right',
         frames: scene.anims.generateFrameNames('archer_attack', { prefix: 'attack_right_', start: 1, end: 6 }),
         frameRate: 10,
-        repeat: 0
+        repeat: 0,
+        origin: { x: 0.5, y: 0.5 }
     });
 };
 
