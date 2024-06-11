@@ -1,9 +1,4 @@
 const createAnimations = (scene) => {
-    scene.anims.createFromAseprite('archer_idle');
-    scene.anims.createFromAseprite('archer_move');
-    scene.anims.createFromAseprite('archer_attack'); // Crear animaciones de ataque
-
-    // Crear alias para las animaciones usando las etiquetas del JSON
     scene.anims.create({
         key: 'idle_down',
         frames: scene.anims.generateFrameNames('archer_idle', { prefix: 'idle_down_', start: 1, end: 4 }),
@@ -17,12 +12,14 @@ const createAnimations = (scene) => {
         frameRate: 5,
         repeat: -1
     });
+
     scene.anims.create({
         key: 'idle_left',
         frames: scene.anims.generateFrameNames('archer_idle', { prefix: 'idle_left_', start: 1, end: 4 }),
         frameRate: 5,
         repeat: -1
     });
+
     scene.anims.create({
         key: 'idle_right',
         frames: scene.anims.generateFrameNames('archer_idle', { prefix: 'idle_right_', start: 1, end: 4 }),
@@ -36,18 +33,21 @@ const createAnimations = (scene) => {
         frameRate: 10,
         repeat: -1
     });
+
     scene.anims.create({
         key: 'move_up',
         frames: scene.anims.generateFrameNames('archer_move', { prefix: 'move_up_', start: 1, end: 6 }),
         frameRate: 10,
         repeat: -1
     });
+
     scene.anims.create({
         key: 'move_left',
         frames: scene.anims.generateFrameNames('archer_move', { prefix: 'move_left_', start: 1, end: 6 }),
         frameRate: 10,
         repeat: -1
     });
+
     scene.anims.create({
         key: 'move_right',
         frames: scene.anims.generateFrameNames('archer_move', { prefix: 'move_right_', start: 1, end: 6 }),
@@ -61,25 +61,26 @@ const createAnimations = (scene) => {
         frameRate: 10,
         repeat: 0
     });
+
     scene.anims.create({
         key: 'attack_up',
         frames: scene.anims.generateFrameNames('archer_attack', { prefix: 'attack_up_', start: 1, end: 6 }),
         frameRate: 10,
         repeat: 0
-
     });
+
     scene.anims.create({
         key: 'attack_left',
         frames: scene.anims.generateFrameNames('archer_attack', { prefix: 'attack_left_', start: 1, end: 6 }),
         frameRate: 10,
         repeat: 0
     });
+
     scene.anims.create({
         key: 'attack_right',
         frames: scene.anims.generateFrameNames('archer_attack', { prefix: 'attack_right_', start: 1, end: 6 }),
         frameRate: 10,
-        repeat: 0,
-        origin: { x: 0.5, y: 0.5 }
+        repeat: 0
     });
 };
 

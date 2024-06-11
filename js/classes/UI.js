@@ -1,43 +1,38 @@
 class UI {
-    constructor(scene) {
+    constructor(scene, player) {
         this.scene = scene;
-        this.createGameArea();
-        this.createInteractionArea();
+        this.player = player;
+        this.createStats();
     }
 
-    createGameArea() {
-        const gameWidth = 640;
-        const gameHeight = 640;
+    createStats() {
+        // Crear un rectángulo negro semitransparente como fondo del HUD
+        this.hudBackground = this.scene.add.rectangle(20, 20, 200, 100, 0x000000, 0.5);
+        this.hudBackground.setOrigin(0, 0); // Establecer el origen en la esquina superior izquierda
 
-        // Crear el área de juego con fondo negro
-        this.gameArea = this.scene.add.rectangle(0, 0, gameWidth, gameHeight, 0x000000);
-        // Agregar un borde rojo temporal
-        this.gameArea.setStrokeStyle(2, 0xff0000);
+        // Crear textos para HP, MP y flechas en la esquina superior izquierda
+        this.hpText = this.scene.add.text(30, 30, 'HP: 3', { fontSize: '16px', fill: '#fff' });
+        this.mpText = this.scene.add.text(30, 50, 'MP: 0', { fontSize: '16px', fill: '#fff' });
+        this.arrowsText = this.scene.add.text(30, 70, 'Arrows: 10/10', { fontSize: '16px', fill: '#fff' });
 
-        // Centrando el área de juego en la pantalla
-        const centerX = this.scene.cameras.main.width / 2;
-        const centerY = this.scene.cameras.main.height / 2 - 80; // Ajustar por la mitad del área de interacción
-        this.gameArea.setPosition(centerX, centerY);
-
-        // Configurar los límites de colisión para el área de juego
-        this.scene.physics.world.setBounds(centerX - gameWidth / 2, centerY - gameHeight / 2, gameWidth, gameHeight);
+        // Asegurarse de que los textos y el fondo del HUD no se muevan con la cámara
+        this.hudBackground.setScrollFactor(0);
+        this.hpText.setScrollFactor(0);
+        this.mpText.setScrollFactor(0);
+        this.arrowsText.setScrollFactor(0);
     }
 
-    createInteractionArea() {
-        const gameWidth = 640;
-        const uiHeight = 160;
-
-        // Crear la barra de interacción con fondo gris
-        this.interactionArea = this.scene.add.rectangle(0, 0, gameWidth, uiHeight, 0x333333);
-
-        // Centrando el área de interacción en la pantalla
-        const centerX = this.scene.cameras.main.width / 2;
-        const centerY = this.scene.cameras.main.height / 2 + 320; // Ajustar por la mitad del área de interacción
-        this.interactionArea.setPosition(centerX, centerY);
+    updateStats(hp, mp, arrows) {
+        this.hpText.setText(`HP: ${hp}`);
+        this.mpText.setText(`MP: ${mp}`);
+        this.arrowsText.setText(`Arrows: ${arrows}/10`);
     }
 
     clearUI() {
-        this.interactionArea.removeAll(true);
+        this.hudBackground.destroy();
+        this.hpText.destroy();
+        this.mpText.destroy();
+        this.arrowsText.destroy();
     }
 }
 

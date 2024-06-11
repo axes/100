@@ -1,0 +1,44 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "maps.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInEditor": 1
+        },
+        "maps.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 312,
+                "y": 311.5
+            }
+        },
+        "maps.tmx#Cave": {
+            "scaleInDock": 1.5
+        }
+    },
+    "last.exportedFilePath": "C:/xampp/htdocs/100/assets",
+    "last.imagePath": "C:/xampp/htdocs/100/assets",
+    "map.height": 30,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.width": 40,
+    "openFiles": [
+        "maps.tmx"
+    ],
+    "project": "maps.tiled-project",
+    "recentFiles": [
+        "maps.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
